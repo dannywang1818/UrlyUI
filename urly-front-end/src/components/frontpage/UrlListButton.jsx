@@ -8,7 +8,7 @@ export default function UrlListButton(props) {
   );
 
   const updateButtonColor = (curColor) => {
-    if (curColor == "text-indigo-700 bg-indigo-100 hover:bg-indigo-200 ") {
+    if (curColor === "text-indigo-700 bg-indigo-100 hover:bg-indigo-200 ") {
       return "text-white bg-green-600 hover:bg-green-600 ";
     } else {
       return "text-indigo-700 bg-indigo-100 hover:bg-indigo-200 ";
@@ -16,7 +16,7 @@ export default function UrlListButton(props) {
   };
 
   const updateButtonText = (curText) => {
-    if (curText == "Copy") {
+    if (curText === "Copy") {
       return "Copied!";
     } else {
       return "Copy";
@@ -24,12 +24,15 @@ export default function UrlListButton(props) {
   };
 
   const handleClick = (e) => {
+    if (buttonText === "Copied!") {
+      return;
+    }
     setButtonText(updateButtonText(buttonText));
     setButtonColor(updateButtonColor(buttonColor));
   };
 
   useEffect(() => {
-    if (buttonText == "Copied!") {
+    if (buttonText === "Copied!") {
       setTimeout(() => {
         setButtonText(updateButtonText(buttonText));
         setButtonColor(updateButtonColor(buttonColor));
@@ -44,7 +47,7 @@ export default function UrlListButton(props) {
         onClick={handleClick}
         className={
           buttonColor +
-          "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          "inline-flex justify-center items-center w-1/4 px-4 py-2 border border-transparent text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         }
       >
         {buttonText}

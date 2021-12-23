@@ -16,8 +16,8 @@ import {
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import frontpage_image from "../statics/urly_frontpage_pic.jpg";
-import UrlForm from "../components/UrlForm";
-import Footer from "../components/Footer";
+import UrlForm from "../components/frontpage/UrlForm";
+import Footer from "../components/frontpage/Footer";
 
 const features = [
   {
